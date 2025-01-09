@@ -75,6 +75,10 @@ app.get("/redirected", (request, response) => {
   response.render("redirected", { title: "Redirected Page" })
 })
 
+app.get("/follow-external-redirect", (request, response) => {
+  response.redirect("https://37signals.com")
+})
+
 app.get("/reference", (request, response) => {
   response.render("reference", { title: "Reference", page_class: "index" })
 })
