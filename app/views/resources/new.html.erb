@@ -1,0 +1,23 @@
+<% content_for :title, "Forms and Flash Messages" %>
+
+<div class="container">
+  <h1 class="d-hotwire-native-none mt-4">Forms and Flash Messages</h1>
+  <p>This page includes a form that demonstrates passing data to the server, redirecting to a new page, and rendering a flash message.</p>
+  <p>Check out the <code>form</code> bridge component to convert the web-based submit button to a native one.</p>
+</div>
+
+<div class="container mt-4">
+  <%= form_with url: resources_path do |form| %>
+    <div class="mb-3">
+      <%= form.label :first_name, class: "form-label" %>
+      <%= form.text_field :first_name, class: "form-control" %>
+    </div>
+
+    <div>
+      <%= form.label :last_name, class: "form-label" %>
+      <%= form.text_field :last_name, class: "form-control" %>
+    </div>
+
+    <%= form.submit "Submit form", class: "btn btn-primary btn-lg w-100 mt-4" %>
+  <% end %>
+</div>

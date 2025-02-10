@@ -31,6 +31,9 @@ Rails.application.routes.draw do
 
   resource :numbers, only: :show
 
+  resources :resources, only: %i[index new create]
+  get "/resource", to: "resources#show", as: :resource
+
   direct(:docs) { "https://native.hotwired.dev" }
   direct(:bridge_components) { "https://native.hotwired.dev/overview/bridge-components" }
 
