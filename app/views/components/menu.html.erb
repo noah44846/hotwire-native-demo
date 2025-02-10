@@ -1,0 +1,41 @@
+<% content_for :title, "Menu Component" %>
+
+<div class="container">
+  <h1 class="d-hotwire-native-none mt-4">Menu Component</h1>
+  <p>This screen contains a menu associated with a Bridge <code>menu</code> component. The page contains a button below to open a web-based menu that contains several options to choose from.</p>
+  <p>Since the Hotwire Native demo app supports the <code>menu</code> component, the web menu is hidden and replaced with a natively displayed menu. Tapping on a native menu option replies back to the web <code>menu</code> component with the <code>selectedIndex</code> of the selected option.</p>
+  <p>Displaying the menu in a native bottom sheet is a typical convention in mobile apps. It blocks touch input for all controls on the screen and allows platform gestures to dismiss the sheet.</p>
+</div>
+
+<div data-controller="menu bridge--menu" class="container mt-4">
+  <button class="btn btn-primary btn-lg w-100" data-action="click->bridge--menu#show">
+    Open Menu
+  </button>
+
+  <div data-menu-target="dialog" data-action="click@window->menu#hideOnClickOutside" style="display: none;">
+    <div>
+      <span data-action="click->menu#hide">×</span>
+      <p data-bridge--menu-target="title">Select an option</p>
+
+      <button class="btn btn-secondary" data-menu-target="item" data-bridge--menu-target="item" data-action="click->menu#itemSelected">
+        Option One
+      </button>
+
+      <button class="btn btn-secondary" data-menu-target="item" data-bridge--menu-target="item" data-action="click->menu#itemSelected">
+        Option Two
+      </button>
+
+      <button class="btn btn-secondary" data-menu-target="item" data-bridge--menu-target="item" data-action="click->menu#itemSelected">
+        Option Three
+      </button>
+
+      <button class="btn btn-secondary" data-menu-target="item" data-bridge--menu-target="item" data-action="click->menu#itemSelected">
+        Option Four
+      </button>
+    </div>
+  </div>
+
+  <h4 class="mt-4 text-center" data-menu-target="result">
+    <!-- Result for selected item here. -->
+  </h4>
+</div>

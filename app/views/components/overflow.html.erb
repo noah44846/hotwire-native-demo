@@ -1,0 +1,41 @@
+<% content_for :title, "Overflow Component" %>
+
+<div class="container">
+  <h1 class="d-hotwire-native-none mt-4">Overflow Component</h1>
+  <p>This screen contains a button associated with a Bridge <code>overflow-menu</code> component. The page also contains a web-based menu associated with a Bridge <code>menu</code> component that contains several options to choose from.</p>
+  <p>Since the Hotwire Native demo app supports the <code>overflow-menu</code> component and the <code>menu</code> component, the web button to open the menu is hidden and replaced with a native 3-dot menu in the top-right native app bar. Tapping on that 3-dot menu will display a native menu driven by the <code>menu</code> component.</p>
+  <p>Hiding the <code>menu</code> options behind the 3-dot <code>overflow-menu</code> is a typical convention in mobile apps. It provides a common place for infrequently used actions and makes more room on the screen for more important actions.</p>
+</div>
+
+<div data-controller="menu bridge--menu" class="container mt-4">
+  <button class="btn btn-primary btn-lg w-100" data-controller="bridge--overflow-menu" data-action="click->bridge--menu#show click->menu#show" data-bridge-title="Options">
+    Open Menu
+  </button>
+
+  <div data-menu-target="dialog" data-action="click@window->menu#hideOnClickOutside" style="display: none;">
+    <div>
+      <span data-action="click->menu#hide">×</span>
+      <p data-bridge--menu-target="title">Select an option</p>
+
+      <button class="btn btn-secondary" data-menu-target="item" data-bridge--menu-target="item" data-action="click->menu#itemSelected">
+        Option One
+      </button>
+
+      <button class="btn btn-secondary" data-menu-target="item" data-bridge--menu-target="item" data-action="click->menu#itemSelected">
+        Option Two
+      </button>
+
+      <button class="btn btn-secondary" data-menu-target="item" data-bridge--menu-target="item" data-action="click->menu#itemSelected">
+        Option Three
+      </button>
+
+      <button class="btn btn-secondary" data-menu-target="item" data-bridge--menu-target="item" data-action="click->menu#itemSelected">
+        Option Four
+      </button>
+    </div>
+  </div>
+
+  <h4 class="mt-4 text-center" data-menu-target="result">
+    <!-- Result for selected item here. -->
+  </h4>
+</div>

@@ -1,0 +1,26 @@
+<% content_for :title, "Form Component" %>
+
+<div class="container">
+  <h1 class="d-hotwire-native-none mt-4">Form Component</h1>
+  <p>This screen contains a form associated with a Bridge <code>form</code> component. It contains a web <code>submit</code> button that submits the form and redirects to a success page after a short delay.</p>
+  <p>Since the Hotwire Native demo app supports the <code>form</code> component, the web submit button is hidden and is replaced with a native button in the top-right native app bar.</p>
+  <p>Displaying the <code>submit</code> button in the top-right of the screen is a typical convention in mobile apps, has the benefit of never being hidden underneath the virtual keyboard, and is always visible no matter where you're scrolled on the page.</p>
+</div>
+
+<div class="container mt-4">
+  <%= form_with url: components_path, data: {controller: "bridge--form", action: "turbo:submit-start->bridge--form#submitStart turbo:submit-end->bridge--form#submitEnd"} do %>
+    <div>
+      <label for="first_name" class="form-label">First Name</label>
+      <input type="text" id="first_name" name="first_name" class="form-control">
+    </div>
+
+    <div>
+      <label for="last_name" class="form-label">Last Name</label>
+      <input type="text" id="last_name" name="last_name" class="form-control">
+    </div>
+
+    <button class="btn btn-primary btn-lg w-100 mt-4" type="submit" data-bridge--form-target="submit" data-bridge-title="Submit">
+      Submit Form
+    </button>
+  <% end %>
+</div>

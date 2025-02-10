@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  resources :components, only: %i[index create] do
+    collection do
+      get :form
+      get :menu
+      get :overflow
+    end
+  end
+  get "/component", to: "components#show", as: :component
+
   resources :configurations, only: [] do
     get "ios_v1", on: :collection
   end
@@ -23,9 +32,8 @@ Rails.application.routes.draw do
 
   resource :numbers, only: :show
 
-  direct :docs do
-    "https://native.hotwired.dev"
-  end
+  direct(:docs) { "https://native.hotwired.dev" }
+  direct(:bridge_components) { "https://native.hotwired.dev/overview/bridge-components" }
 
   get :external_redirect, to: redirect("https://37signals.com")
 

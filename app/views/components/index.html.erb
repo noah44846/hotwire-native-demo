@@ -1,0 +1,32 @@
+<% content_for :title, "Bridge Components" %>
+
+<div class="container">
+  <h1 class="d-hotwire-native-none mt-4">Bridge Components</h1>
+  <p>Hotwire Native abstracts the integration with its corresponding web bridge (formerly Strada), making it even faster to get started.</p>
+</div>
+
+<div class="list-group list-group-flush">
+  <%= render "navigations/item",
+    path: bridge_components_url,
+    icon: "bi-box-arrow-up-right",
+    name: "Documentation",
+    description: "Learn about bridge components." %>
+
+  <%= render "navigations/item",
+    path: form_components_path,
+    icon: "bi-input-cursor-text",
+    name: "Form example",
+    description: "Submit a form with a native button." %>
+
+  <%= render "navigations/item",
+    path: menu_components_path,
+    icon: "bi-menu-up",
+    name: "Menu example",
+    description: "Display a native bottom sheet." %>
+
+  <%= render "navigations/item",
+    path: overflow_components_path,
+    icon: "bi-three-dots",
+    name: "Overflow menu example",
+    description: "Display a native 3-dot button." %>
+</div>
