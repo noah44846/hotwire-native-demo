@@ -17,8 +17,11 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body class="my-3">
-    <%= render "shared/flash" %>
-    <%= yield %>
+  <body>
+    <%= render "shared/nav" %>
+    <div class="my-3">
+      <%= render "shared/flash" %>
+      <%= yield %>
+    </div>
   </body>
 </html>
