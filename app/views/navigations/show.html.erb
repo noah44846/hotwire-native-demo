@@ -1,0 +1,52 @@
+<% content_for :title, "Basic Navigation" %>
+
+<div class="container">
+  <h1 class="d-hotwire-native-none mt-4">Basic Navigation</h1>
+  <p>This screen was pushed onto the navigation stack.</p>
+  <p>This is the default behavior, no custom options are required.</p>
+</div>
+
+<div class="list-group list-group-flush">
+  <%= render "navigations/item",
+    path: second_navigation_path,
+    icon: "bi-arrow-right",
+    name: "Basic navigation",
+    description: "Push another screen on the stack." %>
+
+  <%= render "navigations/item",
+    path: replace_navigation_path,
+    data: {turbo_action: :replace},
+    icon: "bi-arrow-left-right",
+    name: "Replace navigation",
+    description: "Replace this screen with a new one." %>
+
+  <%= render "navigations/item",
+    path: navigation_path,
+    icon: "bi-arrow-clockwise",
+    name: "Visit same page",
+    description: "Reload this screen." %>
+</div>
+
+<div class="container mt-4">
+  <h3>Historical Navigation</h3>
+</div>
+
+<div class="list-group list-group-flush">
+  <%= render "navigations/item",
+    path: turbo_recede_historical_location_path,
+    icon: "bi-arrow-left",
+    name: "Recede navigation",
+    description: "Pop this screen off the stack." %>
+
+  <%= render "navigations/item",
+    path: turbo_refresh_historical_location_path,
+    icon: "bi-arrow-clockwise",
+    name: "Refresh navigation",
+    description: "Pop this screen and refresh the previous." %>
+
+  <%= render "navigations/item",
+    path: turbo_resume_historical_location_path,
+    icon: "bi-sign-stop",
+    name: "Resume navigation",
+    description: "Do nothing." %>
+</div>

@@ -1,0 +1,32 @@
+<% content_for :title, "Modal Navigation #2" %>
+
+<div class="container">
+  <h1 class="d-hotwire-native-none mt-4">Modal Navigation #2</h1>
+  <p>This screen was pushed on the modal stack.</p>
+  <p>Triggered via the following Path Configuration rule:</p>
+  <pre><code>
+  {
+    "patterns": [
+      "/modal$"
+    ],
+    "properties": {
+      "context": "modal"
+    }
+  }
+  </code></pre>
+</div>
+
+<div class="list-group list-group-flush">
+  <%= render "navigations/item",
+    path: replace_modal_path,
+    data: {turbo_action: :replace},
+    icon: "bi-arrow-left-right",
+    name: "Replace navigation",
+    description: "Replace this modal screen with a new one." %>
+
+  <%= render "navigations/item",
+    path: turbo_recede_historical_location_path,
+    icon: "bi-arrow-left",
+    name: "Recede navigation",
+    description: "Pop this screen off the modal stack." %>
+</div>
