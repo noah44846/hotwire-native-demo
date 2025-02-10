@@ -8,19 +8,17 @@
 </div>
 
 <div class="container mt-4">
-  <%= form_with url: components_path, data: {controller: "bridge--form", action: "turbo:submit-start->bridge--form#submitStart turbo:submit-end->bridge--form#submitEnd"} do %>
-    <div>
-      <label for="first_name" class="form-label">First Name</label>
-      <input type="text" id="first_name" name="first_name" class="form-control">
+  <%= form_with url: components_path, data: {controller: "bridge--form", action: "turbo:submit-start->bridge--form#submitStart turbo:submit-end->bridge--form#submitEnd"} do |form| %>
+    <div class="mb-3">
+      <%= form.label :first_name, class: "form-label" %>
+      <%= form.text_field :first_name, class: "form-control" %>
     </div>
 
     <div>
-      <label for="last_name" class="form-label">Last Name</label>
-      <input type="text" id="last_name" name="last_name" class="form-control">
+      <%= form.label :last_name, class: "form-label" %>
+      <%= form.text_field :last_name, class: "form-control" %>
     </div>
 
-    <button class="btn btn-primary btn-lg w-100 mt-4" type="submit" data-bridge--form-target="submit" data-bridge-title="Submit">
-      Submit Form
-    </button>
+    <%= form.submit "Submit form", data: {bridge__form_target: "submit", bridge_title: "Submit"}, class: "btn btn-primary btn-lg w-100 mt-4" %>
   <% end %>
 </div>

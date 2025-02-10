@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
-  resources :components, only: %i[index create] do
+  resources :components, only: %i[index new create] do
     collection do
-      get :form
       get :menu
       get :overflow
     end

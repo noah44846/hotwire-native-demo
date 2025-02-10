@@ -9,8 +9,7 @@ class ConfigurationsController < ApplicationController
           patterns: [
             "/new$",
             "/edit$",
-            "/modal",
-            "/strada-form$"
+            "/modal"
           ],
           properties: {
             context: "modal",
