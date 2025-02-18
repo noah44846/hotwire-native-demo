@@ -2,12 +2,28 @@
 
 <div class="container">
   <h1 class="d-hotwire-native-none mt-4">Forms and Flash Messages</h1>
-  <p>This page includes a form that demonstrates passing data to the server, redirecting to a new page, and rendering a flash message.</p>
+  <p>This page includes a form that demonstrates passing data to the server, redirecting to a new page, and rendering error and success flash messages.</p>
   <p>Check out the <code>form</code> bridge component to convert the web-based submit button to a native one.</p>
 </div>
 
+<% if @resource.errors.any? %>
+  <div class="container">
+    <div class="alert alert-danger" role="alert">
+      <p class="alert-heading fw-semibold mb-1">
+        Please fix these issues:
+      </p>
+
+      <ul class="mb-0">
+        <% @resource.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+<% end %>
+
 <div class="container mt-4">
-  <%= form_with url: resources_path do |form| %>
+  <%= form_with model: @resource do |form| %>
     <div class="mb-3">
       <%= form.label :first_name, class: "form-label" %>
       <%= form.text_field :first_name, class: "form-control" %>
