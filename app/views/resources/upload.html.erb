@@ -1,0 +1,10 @@
+<% content_for :title, "Native File Uploads" %>
+
+<div class="container">
+  <h1 class="d-hotwire-native-none mt-4">Native File Uploads</h1>
+  <p>Prompt for file uploads, like images or camera captures, with built-in Rails form helpers like <code>file_field_tag</code>.</p>
+</div>
+
+<div class="container">
+  <%= file_field_tag :image, accept: "image/jpg,image/jpeg,image/png", class: "form-control" %>
+</div>

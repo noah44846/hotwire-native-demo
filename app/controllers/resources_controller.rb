@@ -29,6 +29,9 @@ class ResourcesController < ApplicationController
   def scroll
   end
 
+  def upload
+  end
+
   private
 
   def resource_params

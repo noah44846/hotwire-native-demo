@@ -36,6 +36,7 @@ Rails.application.routes.draw do
     collection do
       get :long
       get :scroll
+      get :upload
     end
   end
   get "/resource", to: "resources#show", as: :resource
