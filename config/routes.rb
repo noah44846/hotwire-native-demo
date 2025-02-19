@@ -30,7 +30,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resource :numbers, only: :show
+  resources :numbers, only: %i[index show]
 
   resources :resources, only: %i[index new create] do
     collection do

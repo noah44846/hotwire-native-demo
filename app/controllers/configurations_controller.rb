@@ -28,16 +28,6 @@ class ConfigurationsController < ApplicationController
         },
         {
           patterns: [
-            "/numbers/[0-9]+$"
-          ],
-          properties: {
-            view_controller: "numbers_detail",
-            context: "modal"
-          },
-          comment: "Intercept with a native view."
-        },
-        {
-          patterns: [
             "^/$"
           ],
           properties: {
