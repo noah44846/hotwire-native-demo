@@ -28,10 +28,34 @@
     icon: "bi-arrow-right",
     name: "Modal navigation",
     description: "Push a screen on the modal stack." %>
+</div>
 
+<div class="container mt-4">
+  <h3>Historical Navigation</h3>
+</div>
+
+<div class="list-group list-group-flush">
   <%= render "navigations/item",
     path: turbo_recede_historical_location_path,
     icon: "bi-arrow-down",
     name: "Recede navigation",
     description: "Dismiss this modal." %>
+
+  <%= render "navigations/item",
+    path: turbo_refresh_historical_location_path,
+    icon: "bi-arrow-clockwise",
+    name: "Refresh navigation",
+    description: "Dismiss this modal then refresh." %>
+
+  <%= render "navigations/item",
+    path: redirect_modal_path,
+    icon: "bi-arrow-clockwise",
+    name: "Refresh navigation (via redirect)",
+    description: "Dismiss this modal then refresh." %>
+
+  <%= render "navigations/item",
+    path: turbo_resume_historical_location_path,
+    icon: "bi-sign-stop",
+    name: "Resume navigation",
+    description: "Do nothing." %>
 </div>
