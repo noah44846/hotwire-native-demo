@@ -32,7 +32,12 @@ Rails.application.routes.draw do
 
   resource :numbers, only: :show
 
-  resources :resources, only: %i[index new create]
+  resources :resources, only: %i[index new create] do
+    collection do
+      get :long
+      get :scroll
+    end
+  end
   get "/resource", to: "resources#show", as: :resource
 
   direct(:docs) { "https://native.hotwired.dev" }

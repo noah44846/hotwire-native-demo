@@ -23,6 +23,12 @@ class ResourcesController < ApplicationController
     @last_name = params[:last_name]
   end
 
+  def long
+  end
+
+  def scroll
+  end
+
   private
 
   def resource_params

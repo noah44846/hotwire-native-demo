@@ -13,6 +13,12 @@
     description: "The official Hotwire Native docs." %>
 
   <%= render "navigations/item",
+    path: long_resources_path,
+    icon: "bi-arrows-vertical",
+    name: "Scroll restoration",
+    description: "Keep your place when navigating back." %>
+
+  <%= render "navigations/item",
     path: new_resource_path,
     icon: "bi-exclamation-triangle",
     name: "Forms and flash messages",
