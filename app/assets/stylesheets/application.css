@@ -8,3 +8,8 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+
+html {
+  /* Disable smooth scroll from Bootstrap. */
+  scroll-behavior: auto !important;
+}
