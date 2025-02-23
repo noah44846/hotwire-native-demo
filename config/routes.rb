@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  resources :bugs, only: :index do
+    collection do
+      get :tabs
+    end
+  end
+
   resources :components, only: %i[index new create] do
     collection do
       get :menu
