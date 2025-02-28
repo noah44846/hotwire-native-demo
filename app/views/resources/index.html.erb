@@ -1,32 +1,32 @@
 <% content_for :title, "Resources" %>
 
-<div class="container">
-  <h1 class="d-hotwire-native-none mt-4">Resources</h1>
+<div class="top-level-container">
+  <h1 class="hide@native margin-bs-xl text-large-title">Resources</h1>
   <p>This page includes links to Hotwire Native resources, answers to common questions, and a place to validate bug fixes.</p>
-</div>
 
-<div class="list-group list-group-flush">
-  <%= render "navigations/item",
-    path: docs_url,
-    icon: "bi-question-circle",
-    name: "Documentation",
-    description: "The official Hotwire Native docs." %>
+  <div class="formatted-list">
+    <%= render "navigations/item",
+      path: docs_url,
+      icon: "book-bold",
+      name: "Documentation",
+      description: "The official Hotwire Native docs." %>
 
-  <%= render "navigations/item",
-    path: long_resources_path,
-    icon: "bi-arrows-vertical",
-    name: "Scroll restoration",
-    description: "Keep your place when navigating back." %>
+    <%= render "navigations/item",
+      path: long_resources_path,
+      icon: "scroll-bold",
+      name: "Scroll restoration",
+      description: "Keep your place when navigating back." %>
 
-  <%= render "navigations/item",
-    path: new_resource_path,
-    icon: "bi-exclamation-triangle",
-    name: "Forms and flash messages",
-    description: "A demo for forms and flash messages." %>
+    <%= render "navigations/item",
+      path: new_resource_path,
+      icon: "warning-bold",
+      name: "Forms and flash messages",
+      description: "A demo for forms and flash messages." %>
 
-  <%= render "navigations/item",
-    path: upload_resources_path,
-    icon: "bi-cloud-arrow-up",
-    name: "Native file uploads",
-    description: "A demo for image and camera uploads." %>
+    <%= render "navigations/item",
+      path: upload_resources_path,
+      icon: "cloud-upload-bold",
+      name: "Native file uploads",
+      description: "A demo for image and camera uploads." %>
+  </div>
 </div>

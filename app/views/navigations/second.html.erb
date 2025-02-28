@@ -1,20 +1,20 @@
 <% content_for :title, "Basic Navigation #2" %>
 
-<div class="container">
-  <h1 class="d-hotwire-native-none mt-4">Basic Navigation #2</h1>
+<div class="top-level-container">
+  <h1 class="hide@native margin-bs-xl text-large-title">Basic Navigation #2</h1>
   <p>Another screen pushed onto the navigation stack.</p>
-</div>
 
-<div class="list-group list-group-flush">
-  <%= render "navigations/item",
-    path: navigation_path,
-    icon: "bi-arrow-left",
-    name: "Visit previous page",
-    description: "Pop this screen and reload previous one." %>
+  <div class="formatted-list">
+    <%= render "navigations/item",
+      path: navigation_path,
+      icon: "arrow-left-bold",
+      name: "Visit previous page",
+      description: "Pop this screen and reload previous one." %>
 
-  <%= render "navigations/item",
-    path: root_path,
-    icon: "bi-arrow-bar-left",
-    name: "Clear all",
-    description: "Pop all screens off the stack." %>
+    <%= render "navigations/item",
+      path: root_path,
+      icon: "arrow-to-start-bold",
+      name: "Clear all",
+      description: "Pop all screens off the stack." %>
+  </div>
 </div>

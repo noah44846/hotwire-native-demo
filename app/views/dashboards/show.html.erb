@@ -1,74 +1,70 @@
 <% content_for :title, "Navigation" %>
 
-<div class="container">
-  <h1 class="d-hotwire-native-none mt-4">Navigation</h1>
+<div class="top-level-container">
+  <h1 class="hide@native margin-bs-xl text-large-title">Navigation</h1>
   <p>This demo app will help you get acquainted with Hotwire Native.</p>
-</div>
 
-<div class="list-group list-group-flush">
-  <%= render "navigations/item",
-    path: navigation_path,
-    icon: "bi-arrow-right",
-    name: "Basic navigation",
-    description: "Push a screen on the stack." %>
+  <div class="formatted-list">
+    <%= render "navigations/item",
+      path: navigation_path,
+      icon: "arrow-right-bold",
+      name: "Basic navigation",
+      description: "Push a screen on the stack." %>
 
-  <%= render "navigations/item",
-    path: new_modal_path,
-    icon: "bi-arrow-up",
-    name: "Modal navigation",
-    description: "Present a modal screen." %>
+    <%= render "navigations/item",
+      path: new_modal_path,
+      icon: "arrow-up-bold",
+      name: "Modal navigation",
+      description: "Present a modal screen." %>
 
-  <%= render "navigations/item",
-    path: slow_navigation_path,
-    icon: "bi-hourglass",
-    name: "Slow-loading page",
-    description: "See the loading indicator in action." %>
+    <%= render "navigations/item",
+      path: slow_navigation_path,
+      icon: "hourglass-bold",
+      name: "Slow-loading page",
+      description: "See the loading indicator in action." %>
 
-  <%= render "navigations/item",
-    path: "/not_found",
-    icon: "bi-bug",
-    name: "Error handling",
-    description: "Visit a page that does not exist (404)." %>
-</div>
+    <%= render "navigations/item",
+      path: "/not_found",
+      icon: "bug-bold",
+      name: "Error handling",
+      description: "Visit a page that does not exist (404)." %>
+  </div>
 
-<div class="container mt-4">
-  <h3>Advanced Navigation</h3>
-</div>
+  <h3 class="margin-bs-xl margin-be-l text-title">Advanced Navigation</h3>
 
-<div class="list-group list-group-flush">
-  <%= render "navigations/item",
-    path: numbers_path,
-    icon: "bi-phone",
-    name: "Native screen",
-    description: "Intercept with a native view." %>
+  <div class="formatted-list">
+    <%= render "navigations/item",
+      path: numbers_path,
+      icon: "smartphone-bold",
+      name: "Native screen",
+      description: "Intercept with a native view." %>
 
-  <%= render "navigations/item",
-    path: redirect_navigation_path,
-    icon: "bi-arrow-90deg-right",
-    name: "Redirect",
-    description: "Follow an internal redirect." %>
-</div>
+    <%= render "navigations/item",
+      path: redirect_navigation_path,
+      icon: "arrow-up-right-bold",
+      name: "Redirect",
+      description: "Follow an internal redirect." %>
+  </div>
 
-<div class="container mt-4">
-  <h3>External Navigation</h3>
-</div>
+  <h3 class="margin-bs-xl margin-be-l text-title">External Navigation</h3>
 
-<div class="list-group list-group-flush">
-  <%= render "navigations/item",
-    path: docs_url,
-    icon: "bi-box-arrow-up-right",
-    name: "External link",
-    description: "Visit a page with a different host." %>
+  <div class="formatted-list">
+    <%= render "navigations/item",
+      path: docs_url,
+      icon: "external-link-bold",
+      name: "External link",
+      description: "Visit a page with a different host." %>
 
-  <%= render "navigations/item",
-    path: external_redirect_path,
-    icon: "bi-arrow-90deg-right",
-    name: "External redirect",
-    description: "Follow an external redirect." %>
+    <%= render "navigations/item",
+      path: external_redirect_path,
+      icon: "arrow-up-right-bold",
+      name: "External redirect",
+      description: "Follow an external redirect." %>
 
-  <%= render "navigations/item",
-    path: "sms:555-555-5555",
-    icon: "bi-chat",
-    name: "<code>sms:</code> URLs".html_safe,
-    description: "Handle non-http(s) URLs natively." %>
+    <%= render "navigations/item",
+      path: "sms:555-555-5555",
+      icon: "speech-bubble-bold",
+      name: "<code>sms:</code> URLs".html_safe,
+      description: "Handle non-http(s) URLs natively." %>
+  </div>
 </div>

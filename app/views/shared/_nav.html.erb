@@ -1,31 +1,18 @@
-<nav class="navbar d-hotwire-native-none bg-body-tertiary">
-  <div class="container">
-    <%= link_to "Hotwire Native Demo", root_path, class: "navbar-brand" %>
-
-    <button class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbar"
-            aria-controls="navbar"
-            aria-expanded="false"
-            aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse pb-2" id="navbar">
-      <ul class="navbar-nav me-auto pb-">
-        <li class="nav-item">
-          <%= link_to "Navigation", root_path, class: "nav-link" %>
-        </li>
-
-        <li class="nav-item">
-          <%= link_to "Bridge Components", components_path, class: "nav-link" %>
-        </li>
-
-        <li class="nav-item">
-          <%= link_to "Resources", resources_path, class: "nav-link" %>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+<header class="header top-level-container hide@native">
+  <%= link_to root_path, class: "header__brand unstyled-link color-accent" do %>
+    <%= sprite_tag "hotwire-native-logo", aria: { label: "Hotwire Native Demo" } %>
+  <% end %>
+  <nav>
+    <ul class="main-navigation unstyled-list block-100">
+      <li>
+        <%= link_to "Navigation", root_path, class: "main-navigation__link decorated-link" %>
+      </li>
+      <li>
+        <%= link_to "Bridge Components", components_path, class: "main-navigation__link decorated-link" %>
+      </li>
+      <li>
+        <%= link_to "Resources", resources_path, class: "main-navigation__link decorated-link" %>
+      </li>
+    </ul>
+  </nav>
+</header>

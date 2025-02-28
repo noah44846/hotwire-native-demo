@@ -1,5 +1,5 @@
 /* Hide elements in Hotwire Native apps. */
-.d-hotwire-native-none {
+.hide\@native {
   display: none !important;
 }
 

@@ -1,14 +1,14 @@
 <% content_for :title, "Numbers" %>
 
-<div class="container">
-  <h1 class="d-hotwire-native-none mt-4">Numbers</h1>
+<div class="top-level-container">
+  <h1 class="hide@native margin-bs-xl text-large-title">Numbers</h1>
   <p>This page will be intercepted with a native screen in the apps.</p>
-</div>
 
-<div class="list-group list-group-flush">
-  <% (1..10).each do |i| %>
-    <div class="list-group-item py-3">
-      <p class="fs-5 mb-0"><%= i %></p>
-    </div>
-  <% end %>
+  <div class="formatted-list">
+    <% (1..10).each do |i| %>
+      <div class="formatted-list__item padding-i-l">
+        <%= i %>
+      </div>
+    <% end %>
+  </div>
 </div>

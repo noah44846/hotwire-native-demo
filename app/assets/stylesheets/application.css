@@ -9,7 +9,34 @@
  * Consider organizing styles into separate files for maintainability.
  */
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 html {
   /* Disable smooth scroll from Bootstrap. */
   scroll-behavior: auto !important;
+  font-size: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-body);
+  color: var(--color-on-body);
+  font-family: var(--font-family);
+  font-size: var(--text-body-size);
+  line-height: var(--text-line-height);
+}
+
+code {
+  color: color-mix(in srgb, var(--color-accent), var(--color-on-body) 20%);
+  word-wrap: break-word;
+}
+
+a:focus-visible {
+  border-radius: 0.5rem;
+  outline: 2px solid var(--color-on-body);
+  outline-offset: 1px;
 }

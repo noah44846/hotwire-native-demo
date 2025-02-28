@@ -1,23 +1,23 @@
 <% content_for :title, "Turbo Action Replace" %>
 
-<div class="container">
-  <h1 class="d-hotwire-native-none mt-4">Turbo Action Replace</h1>
+<div class="top-level-container">
+  <h1 class="hide@native margin-bs-xl text-large-title">Turbo Action Replace</h1>
   <p>Each of these tabs uses <code>data-turbo-action="replace"</code> to present a different tab. The URL path for each is the same, only the query param changes.</p>
   <p>This reproduces <%= link_to "GitHub issue #53", "https://github.com/hotwired/hotwire-native-ios/issues/53" %>.</p>
 </div>
 
-<ul class="nav nav-tabs">
-  <li class="nav-item">
-    <%= link_to "First", tabs_bugs_path(tab: "first"), class: "nav-link #{"active" if @tab == "first"}", data: {turbo_action: :replace} %>
+<ul class="tabs top-level-container margin-bs-xl">
+  <li class="tabs__item">
+    <%= link_to "First", tabs_bugs_path(tab: "first"), class: "nav-link #{"active" if @tab == "first"}", data: { turbo_action: :replace } %>
   </li>
-  <li class="nav-item">
-    <%= link_to "Second", tabs_bugs_path(tab: "second"), class: "nav-link #{"active" if @tab == "second"}", data: {turbo_action: :replace} %>
+  <li class="tabs__item">
+    <%= link_to "Second", tabs_bugs_path(tab: "second"), class: "nav-link #{"active" if @tab == "second"}", data: { turbo_action: :replace } %>
   </li>
-  <li class="nav-item">
-    <%= link_to "Third", tabs_bugs_path(tab: "third"), class: "nav-link #{"active" if @tab == "third"}", data: {turbo_action: :replace} %>
+  <li class="tabs__item">
+    <%= link_to "Third", tabs_bugs_path(tab: "third"), class: "nav-link #{"active" if @tab == "third"}", data: { turbo_action: :replace } %>
   </li>
 </ul>
 
-<div class="container mt-3">
-  <p>Content for the <%= @tab %> tab.</p>
+<div class="top-level-container margin-bs-xl">
+  <p class="text-title">Content for the <%= @tab %> tab.</p>
 </div>

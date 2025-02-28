@@ -1,24 +1,24 @@
 <% content_for :title, "Form Component" %>
 
-<div class="container">
-  <h1 class="d-hotwire-native-none mt-4">Form Component</h1>
+<div class="top-level-container">
+  <h1 class="hide@native margin-bs-xl text-large-title">Form Component</h1>
   <p>This screen contains a form associated with a Bridge <code>form</code> component. It contains a web <code>submit</code> button that submits the form and redirects to a success page after a short delay.</p>
   <p>Since the Hotwire Native demo app supports the <code>form</code> component, the web submit button is hidden and is replaced with a native button in the top-right native app bar.</p>
   <p>Displaying the <code>submit</code> button in the top-right of the screen is a typical convention in mobile apps, has the benefit of never being hidden underneath the virtual keyboard, and is always visible no matter where you're scrolled on the page.</p>
-</div>
 
-<div class="container mt-4">
-  <%= form_with url: components_path, data: {controller: "bridge--form", action: "turbo:submit-start->bridge--form#submitStart turbo:submit-end->bridge--form#submitEnd"} do |form| %>
-    <div class="mb-3">
+  <%= form_with url: components_path, class: "flex-container row-gap", data: {controller: "bridge--form", action: "turbo:submit-start->bridge--form#submitStart turbo:submit-end->bridge--form#submitEnd"} do |form| %>
+    <div class="flex-column flex-100 flex-6@l flex-5@xl">
       <%= form.label :first_name, class: "form-label" %>
-      <%= form.text_field :first_name, class: "form-control" %>
+      <%= form.text_field :first_name, class: "form-control inline-100" %>
     </div>
 
-    <div>
+    <div class="flex-column flex-100 flex-6@l flex-5@xl">
       <%= form.label :last_name, class: "form-label" %>
-      <%= form.text_field :last_name, class: "form-control" %>
+      <%= form.text_field :last_name, class: "form-control inline-100" %>
     </div>
 
-    <%= form.submit "Submit form", data: {bridge__form_target: "submit", bridge_title: "Submit"}, class: "btn btn-primary btn-lg w-100 mt-4" %>
+    <div class="flex-column align-self-end">
+      <%= form.submit "Submit form", data: { bridge__form_target: "submit", bridge_title: "Submit" }, class: "button inline-100" %>
+    </div>
   <% end %>
 </div>
