@@ -10,17 +10,25 @@
  * Flex Container
  */
 
-.flex-container {
+.flex-container,
+.flush-flex-container {
   display: flex;
   flex-wrap: wrap;
   align-items: stretch;
   align-content: start;
+}
+
+.flex-container {
   margin-inline: calc(var(--space-gutter) * -0.5);
 }
 
-.flex-column {
+.flex-column,
+.flush-flex-column {
   flex: 1 0 0%;
   max-inline-size: 100%;
+}
+
+.flex-column {
   padding-inline: calc(var(--space-gutter) * 0.5);
 }
 

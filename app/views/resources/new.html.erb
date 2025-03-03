@@ -16,7 +16,7 @@
     </section>
   <% end %>
 
-  <%= form_with model: @resource, class: "flex-container row-gap" do |form| %>
+  <%= form_with model: @resource, class: "flex-container row-gap-gutter" do |form| %>
     <div class="flex-column flex-100 flex-6@l flex-5@xl">
       <%= form.label :first_name, class: "form-label" %>
       <%= form.text_field :first_name, class: "form-control inline-100" %>

@@ -6,7 +6,7 @@
   <p>Since the Hotwire Native demo app supports the <code>form</code> component, the web submit button is hidden and is replaced with a native button in the top-right native app bar.</p>
   <p>Displaying the <code>submit</code> button in the top-right of the screen is a typical convention in mobile apps, has the benefit of never being hidden underneath the virtual keyboard, and is always visible no matter where you're scrolled on the page.</p>
 
-  <%= form_with url: components_path, class: "flex-container row-gap", data: {controller: "bridge--form", action: "turbo:submit-start->bridge--form#submitStart turbo:submit-end->bridge--form#submitEnd"} do |form| %>
+  <%= form_with url: components_path, class: "flex-container row-gap-gutter", data: {controller: "bridge--form", action: "turbo:submit-start->bridge--form#submitStart turbo:submit-end->bridge--form#submitEnd"} do |form| %>
     <div class="flex-column flex-100 flex-6@l flex-5@xl">
       <%= form.label :first_name, class: "form-label" %>
       <%= form.text_field :first_name, class: "form-control inline-100" %>

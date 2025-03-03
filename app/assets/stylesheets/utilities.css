@@ -133,9 +133,13 @@
  * Spaces
  */
 
-.row-gap {
-  row-gap: var(--space-gutter);
-}
+.gap { gap: var(--space-medium); }
+.row-gap { row-gap: var(--space-medium); }
+.column-gap { column-gap: var(--space-medium); }
+
+.gap-gutter { gap: var(--space-gutter); }
+.row-gap-gutter { row-gap: var(--space-gutter); }
+.column-gap-gutter { column-gap: var(--space-gutter); }
 
 /*
  * Margins
