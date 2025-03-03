@@ -117,8 +117,10 @@
   }
 }
 
-a.formatted-list__item:hover {
-  background: var(--color-surface);
+@media (hover: hover) and (pointer: fine) {
+  a.formatted-list__item:hover {
+    background: var(--color-surface);
+  }
 }
 
 .formatted-list--top-level {

@@ -8,10 +8,12 @@
   text-decoration: inherit;
 }
 
-.decorated-link:hover {
-  background: linear-gradient(to top, currentColor 2px, transparent 0) bottom no-repeat;
-  color: var(--color-accent);
-  animation: 0.2s decorated-link both;
+@media (hover: hover) and (pointer: fine) {
+  .decorated-link:hover {
+    background: linear-gradient(to top, currentColor 2px, transparent 0) bottom no-repeat;
+    color: var(--color-accent);
+    animation: 0.2s decorated-link both;
+  }
 }
 
 @keyframes decorated-link {
