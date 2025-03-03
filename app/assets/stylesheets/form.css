@@ -24,8 +24,7 @@ meter,
 progress,
 select,
 textarea {
-  display: inline-block;
-  vertical-align: baseline;
+  overflow: hidden;
   outline: unset;
   box-shadow: unset;
   color: var(--color-on-body);
@@ -83,6 +82,7 @@ input[type="file"] {
     margin-inline-end: var(--space-medium);
     background: var(--color-surface);
     color: var(--color-on-surface);
+    font-size: unset;
   }
 }
 
@@ -94,6 +94,7 @@ input[type="file"] {
 
 .form-control {
   display: block;
+  max-inline-size: 100%;
 }
 
 /*
