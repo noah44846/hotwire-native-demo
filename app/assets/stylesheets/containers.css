@@ -6,19 +6,6 @@
   padding-inline: var(--top-level-container-padding);
 }
 
-/* TODO: Remove? */
-.top-level-realign-margins {
-  @media (max-width: calc(60rem - 1px)) {
-    margin-inline: calc(var(--top-level-container-padding) * -1);
-  }
-}
-
-.top-level-realign-paddings {
-  @media (max-width: calc(60rem - 1px)) {
-    padding-inline: var(--top-level-container-padding);
-  }
-}
-
 /*
  * Flex Container
  */
