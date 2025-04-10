@@ -20,7 +20,7 @@
       path: navigation_path,
       icon: "arrow-return-bold",
       name: "Basic navigation",
-      description: "Dismiss the modal and push a screen on the main stack." %>
+      description: "Navigate on the main stack. Dismiss the modal stack and push a screen on the main stack." %>
 
     <%= render "navigations/item",
       path: modal_path,
@@ -36,24 +36,18 @@
       path: turbo_recede_historical_location_path,
       icon: "arrow-down-bold",
       name: "Recede navigation",
-      description: "Dismiss this modal." %>
+      description: "Dismiss the modal stack. Pop the top screen off the main stack (unless it's the root destination)." %>
 
     <%= render "navigations/item",
       path: turbo_refresh_historical_location_path,
       icon: "arrow-clockwise-bold",
       name: "Refresh navigation",
-      description: "Dismiss this modal then refresh." %>
-
-    <%= render "navigations/item",
-      path: redirect_modal_path,
-      icon: "arrow-clockwise-bold",
-      name: "Refresh navigation (via redirect)",
-      description: "Dismiss this modal then refresh." %>
+      description: "Dismiss the modal stack. Refresh the top screen on the main stack." %>
 
     <%= render "navigations/item",
       path: turbo_resume_historical_location_path,
       icon: "stop-bold",
       name: "Resume navigation",
-      description: "Do nothing." %>
+      description: "Dismiss the modal stack." %>
   </div>
 </div>

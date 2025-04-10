@@ -15,6 +15,12 @@
       description: "Push another screen on the stack." %>
 
     <%= render "navigations/item",
+      path: new_modal_path,
+      icon: "arrow-up-bold",
+      name: "Modal navigation",
+      description: "Present a modal screen." %>
+
+    <%= render "navigations/item",
       path: replace_navigation_path,
       data: {turbo_action: :replace},
       icon: "arrow-left-right-bold",
@@ -41,7 +47,7 @@
       path: turbo_refresh_historical_location_path,
       icon: "arrow-clockwise-bold",
       name: "Refresh navigation",
-      description: "Pop this screen and refresh the previous." %>
+      description: "Refresh this screen." %>
 
     <%= render "navigations/item",
       path: turbo_resume_historical_location_path,

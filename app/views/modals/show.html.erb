@@ -22,11 +22,27 @@
       icon: "arrow-left-right-bold",
       name: "Replace navigation",
       description: "Replace this modal screen with a new one." %>
+  </div>
 
+  <h3 class="margin-bs-xl margin-be-l text-title">Historical Navigation</h3>
+
+  <div class="formatted-list formatted-list--top-level">
     <%= render "navigations/item",
       path: turbo_recede_historical_location_path,
-      icon: "arrow-left-bold",
+      icon: "arrow-down-bold",
       name: "Recede navigation",
-      description: "Pop this screen off the modal stack." %>
+      description: "Dismiss the modal stack. Pop the top screen off the main stack (unless it's the root destination)." %>
+
+    <%= render "navigations/item",
+      path: turbo_refresh_historical_location_path,
+      icon: "arrow-clockwise-bold",
+      name: "Refresh navigation",
+      description: "Dismiss the modal stack. Refresh the top screen on the main stack." %>
+
+    <%= render "navigations/item",
+      path: turbo_resume_historical_location_path,
+      icon: "stop-bold",
+      name: "Resume navigation",
+      description: "Dismiss the modal stack." %>
   </div>
 </div>
