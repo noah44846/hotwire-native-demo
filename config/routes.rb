@@ -21,7 +21,6 @@ Rails.application.routes.draw do
 
   resource :modal, only: %i[new show] do
     collection do
-      get :redirect
       get :replace
     end
   end
