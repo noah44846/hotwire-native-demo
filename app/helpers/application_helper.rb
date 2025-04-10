@@ -6,7 +6,7 @@ module ApplicationHelper
   end
 
   def icon_tag(name, size: :medium, **options)
-    class_name = ["#{size}-icon", options.delete(:class)].compact.join(" ")
+    class_name = [ "#{size}-icon", options.delete(:class) ].compact.join(" ")
     sprite_tag(name, **options.merge(class: class_name, aria: { hidden: "true" }))
   end
 end
