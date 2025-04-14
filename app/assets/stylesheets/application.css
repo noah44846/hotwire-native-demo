@@ -35,6 +35,10 @@ code {
   word-wrap: break-word;
 }
 
+a {
+  color: var(--color-link);
+}
+
 a:focus-visible {
   border-radius: 0.5rem;
   outline: 2px solid var(--color-on-body);

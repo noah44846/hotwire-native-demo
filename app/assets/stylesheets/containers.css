@@ -83,8 +83,17 @@
   background: color-mix(in srgb, var(--color-warning), var(--color-body) 90%);
   color: var(--color-warning);
 
+  @media (prefers-color-scheme: dark) {
+    background: color-mix(in srgb, var(--color-warning), var(--color-body) 85%);
+    color: color-mix(in srgb, var(--color-warning), var(--color-on-body) 20%);
+  }
+
   .alert__header {
     color: color-mix(in srgb, var(--color-warning), var(--color-on-body) 20%);
+
+    @media (prefers-color-scheme: dark) {
+      color: var(--color-warning);
+    }
   }
 }
 
@@ -92,8 +101,17 @@
   background: color-mix(in srgb, var(--color-success), var(--color-body) 90%);
   color: var(--color-success);
 
+  @media (prefers-color-scheme: dark) {
+    background: color-mix(in srgb, var(--color-success), var(--color-body) 85%);
+    color: color-mix(in srgb, var(--color-success), var(--color-on-body) 20%);
+  }
+
   .alert__header {
     color: color-mix(in srgb, var(--color-success), var(--color-on-body) 20%);
+
+    @media (prefers-color-scheme: dark) {
+      color: var(--color-success);
+    }
   }
 }
 
