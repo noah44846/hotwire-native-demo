@@ -1,24 +1,18 @@
-# README
+# Hotwire Native Demo
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A small web app to demonstrate how to use Hotwire with the Hotwire Native frameworks. The demo app is available at [https://hotwire-native-demo.dev](https://hotwire-native-demo.dev).
 
-Things you may want to cover:
+## Running Locally
 
-* Ruby version
+Clone the repo, and then:
 
-* System dependencies
+```
+$ bundle install
+$ bin/dev
+```
 
-* Configuration
+The server is running on [`localhost:3000`](http://localhost:45678). You can open that URL in the browser and ensure the native app is using the same URL.
 
-* Database creation
+## Requirements
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Ruby 3.4.2
