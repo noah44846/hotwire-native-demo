@@ -5,7 +5,7 @@
 
   --color-accent: rgba(193, 139, 244, 1);
   --color-on-accent: rgba(255, 255, 255, 1);
-  --color-link: rgba(0, 0, 255, 1);
+  --color-link: rgba(193, 139, 244, 1);
 
   --color-body: rgba(255, 255, 255, 1);
   --color-on-body: rgba(0, 0, 0, 1);
@@ -21,7 +21,7 @@
   --color-success: rgba(84, 163, 104, 1);
 
   @media (prefers-color-scheme: dark) {
-    --color-link: rgba(160, 170, 255, 1);
+    --color-link: rgba(193, 139, 244, 1);
 
     --color-body: rgba(40, 42, 44, 1);
     --color-on-body: rgba(255, 255, 255, 1);
