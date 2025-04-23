@@ -1,0 +1,53 @@
+<% content_for :title, "Modal Navigation" %>
+
+<div class="top-level-container">
+  <h1 class="hide@native margin-bs-xl text-large-title">Modal Navigation</h1>
+  <p>
+    This screen was presented as a modal.<br>
+    Triggered via the following Path Configuration rule:<br>
+    <pre><code>{
+  "patterns": [
+    "/new$"
+  ],
+  "properties": {
+    "context": "modal"
+  }
+}</code></pre>
+  </p>
+
+  <div class="formatted-list formatted-list--top-level">
+    <%= render "navigations/item",
+      path: second_navigation_path,
+      icon: "arrow-return-bold",
+      name: "Basic navigation",
+      description: "Navigate on the main stack. Dismiss the modal stack and push a screen on the main stack." %>
+
+    <%= render "navigations/item",
+      path: modal_path,
+      icon: "arrow-right-bold",
+      name: "Modal navigation",
+      description: "Push a screen on the modal stack." %>
+  </div>
+
+  <h3 class="margin-bs-xl margin-be-l text-title">Historical Navigation</h3>
+
+  <div class="formatted-list formatted-list--top-level">
+    <%= render "navigations/item",
+      path: turbo_recede_historical_location_path,
+      icon: "arrow-down-bold",
+      name: "Recede navigation",
+      description: "Dismiss the modal stack. Pop the top screen off the main stack (unless it's the root destination)." %>
+
+    <%= render "navigations/item",
+      path: turbo_refresh_historical_location_path,
+      icon: "arrow-clockwise-bold",
+      name: "Refresh navigation",
+      description: "Dismiss the modal stack. Refresh the top screen on the main stack." %>
+
+    <%= render "navigations/item",
+      path: turbo_resume_historical_location_path,
+      icon: "stop-bold",
+      name: "Resume navigation",
+      description: "Dismiss the modal stack." %>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= content_for(:title) || "Hotwire Native Demo" %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= yield :head %>
+
+    <%= stylesheet_link_tag "variables", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "form", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "containers", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "header", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "utilities", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "native", "data-turbo-track": "reload" if hotwire_native_app? %>
+    <%= javascript_importmap_tags %>
+
+    <meta name="turbo-refresh-method" content="morph">
+    <meta name="turbo-refresh-scroll" content="preserve">
+  </head>
+
+  <body>
+    <%= render "shared/nav" %>
+    <main class="padding-be-xxl">
+      <%= render "shared/flash" %>
+      <%= yield %>
+    </main>
+  </body>
+</html>

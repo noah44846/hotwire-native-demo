@@ -1,0 +1,48 @@
+<% content_for :title, "Modal Navigation #2" %>
+
+<div class="top-level-container">
+  <h1 class="hide@native margin-bs-xl text-large-title">Modal Navigation #2</h1>
+  <p>
+    This screen was pushed on the modal stack.<br>
+    Triggered via the following Path Configuration rule:<br>
+    <pre><code>{
+  "patterns": [
+    "/modal$"
+  ],
+  "properties": {
+    "context": "modal"
+  }
+}</code></pre>
+  </p>
+
+  <div class="formatted-list formatted-list--top-level">
+    <%= render "navigations/item",
+      path: replace_modal_path,
+      data: {turbo_action: :replace},
+      icon: "arrow-left-right-bold",
+      name: "Replace navigation",
+      description: "Replace this modal screen with a new one." %>
+  </div>
+
+  <h3 class="margin-bs-xl margin-be-l text-title">Historical Navigation</h3>
+
+  <div class="formatted-list formatted-list--top-level">
+    <%= render "navigations/item",
+      path: turbo_recede_historical_location_path,
+      icon: "arrow-down-bold",
+      name: "Recede navigation",
+      description: "Dismiss the modal stack. Pop the top screen off the main stack (unless it's the root destination)." %>
+
+    <%= render "navigations/item",
+      path: turbo_refresh_historical_location_path,
+      icon: "arrow-clockwise-bold",
+      name: "Refresh navigation",
+      description: "Dismiss the modal stack. Refresh the top screen on the main stack." %>
+
+    <%= render "navigations/item",
+      path: turbo_resume_historical_location_path,
+      icon: "stop-bold",
+      name: "Resume navigation",
+      description: "Dismiss the modal stack." %>
+  </div>
+</div>
