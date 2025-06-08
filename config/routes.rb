@@ -48,6 +48,7 @@ Rails.application.routes.draw do
   get "/resource", to: "resources#show", as: :resource
 
   direct(:docs) { "https://native.hotwired.dev" }
+  direct(:book) { "https://pragprog.com/titles/jmnative/hotwire-native-for-rails-developers/" }
   direct(:bridge_components) { "https://native.hotwired.dev/overview/bridge-components" }
 
   get :external_redirect, to: redirect("https://37signals.com")
