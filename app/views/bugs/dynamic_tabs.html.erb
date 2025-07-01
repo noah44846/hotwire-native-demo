@@ -1,0 +1,45 @@
+<% content_for :title, "Refresh on JS tabs" %>
+
+<%# import bootstrap for tabs %>
+<% content_for :head do %>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+<% end %>
+
+<div class="top-level-container">
+  <h1 class="hide@native margin-bs-xl text-large-title">Refresh on JS tabs</h1>
+  <p>
+    The tabs below are JS tabs (bootstrap) that change visibility of the tab panes when clicked on it. A stimulus controller changes the history so that when we refresh, the
+    active tab stays open.
+  </p>
+  <p>
+    When clicking on the refresh button in the third tab, the tab stays active after the refresh. If however we do the same in the bottom sheet or just submit a form that
+    redirects to <code>/refresh_historical_location</code> the initial URL and not the one changed with JS.
+  </p>
+</div>
+
+<div class="top-level-container" data-controller="tab-navigation">
+  <nav class="nav nav-tabs" role="tablist">
+    <button class="<%= class_names('nav-link', active: @tab == 'first') %>" data-action="click->tab-navigation#tabClick" data-bs-target="#first" data-bs-toggle="tab">First</button>
+    <button class="<%= class_names('nav-link', active: @tab == 'second') %>" data-action="click->tab-navigation#tabClick" data-bs-target="#second" data-bs-toggle="tab">Second</button>
+    <button class="<%= class_names('nav-link', active: @tab == 'third') %>" data-action="click->tab-navigation#tabClick" data-bs-target="#third" data-bs-toggle="tab">Third</button>
+  </nav>
+
+  <div class="tab-content">
+    <div id="first" class="<%= class_names('tab-pane', 'active show' => @tab == 'first') %>" role="tabpanel">
+      <p>Content for the first tab.</p>
+    </div>
+    <div id="second" class="<%= class_names('tab-pane', 'active show' => @tab == 'second') %>" role="tabpanel">
+      <p>Content for the second tab.</p>
+    </div>
+    <div id="third" class="<%= class_names('tab-pane', 'active show' => @tab == 'third') %>" role="tabpanel">
+      <p>Content for the third tab.</p>
+      <div class="flex-column align-self-end">
+        <%= button_to 'refresh', '/refresh_historical_location', method: :get, class: 'button', data: { turbo_frame: '_top' } %>
+      </div>
+      <div class="flex-column align-self-end margin-bs">
+        <%= link_to 'open bottom sheet', bottom_sheet_bugs_path, class: 'button', data: { turbo_frame: '_top' } %>
+      </div>
+    </div>
+  </div>
+</div>

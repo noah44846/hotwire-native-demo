@@ -103,7 +103,17 @@ class ConfigurationsController < ApplicationController
             context: "modal",
             uri: "hotwire://fragment/image_viewer"
           }
-        }
+        },
+        {
+          patterns: [
+            "/bottom_sheet$"
+          ],
+          properties: {
+            context: "modal",
+            uri: "hotwire://fragment/web/modal/sheet",
+            pull_to_refresh_enabled: false
+          }
+        },
       ]
     }
   end

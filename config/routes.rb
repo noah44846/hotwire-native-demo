@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   resources :bugs, only: :index do
     collection do
       get :tabs
+      get :dynamic_tabs
+      get :bottom_sheet
+      post :refresh
     end
   end
 
